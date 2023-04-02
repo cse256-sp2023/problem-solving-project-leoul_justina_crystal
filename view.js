@@ -11,13 +11,13 @@ let user_selector = define_new_user_select_field(
     }
   );
   
-  $("#sidepanel").append(user_selector);
+  // $("#sidepanel").append(user_selector);
 
-let permissions_panel = define_new_effective_permissions(
-  "permissions_panel",
-  true
-);
-$("#sidepanel").append(permissions_panel);
+// let permissions_panel = define_new_effective_permissions(
+//   "permissions_panel",
+//   true
+// );
+// $("#sidepanel").append(permissions_panel);
 
 $('.perm_info').click(function(){
 

@@ -625,8 +625,7 @@ function renderUserGuideUI() {
 
   // Create an array of items for the bullet list
   var leftItems = [
-    "There are a total of 13 actions that a user can perform, although these actions are sometimes summarized with a smaller set of general permissions (see below)",
-    "For every action, every file/folder has a list of users that are allowed to perform that action or denied permission to perform that action",
+    "Selecting \"Deny\" overrides \"Allow\"<br>",
     "Inheritance means that a file/folder may inherit a permissions list from its parent. For example, if Alice has read attributes and delete access to parentFolder, some childFile inside parentFolder may also have those permissions set if the checkbox under advanced that reads <strong> Include inheritable permissions from this object's parent </strong> is checked",
   ];
 
@@ -646,26 +645,16 @@ function renderUserGuideUI() {
     "<strong> What do I do if I want to change a specific permission on a file? </strong> <br><br>"
   );
   userGuideDivRight.append(
-    "When a user tries to do something, the first thing that is checked is the direct permissions of the file. You can view and modify this list for a file by clicking on permissions -> advanced -> edit -> setting the user by clicking the change button"
+    "When a user tries to do something, the first thing that is checked is the direct permissions of the file. You can view and modify this list for a file by clicking on permissions -> advanced -> edit -> setting the user by clicking the change button <br><br><br>"
   );
 
-  //   // Create an array of items for the bullet list
-  //   var rightItems = [
-  //     "What do I do if I want to change a specific permission on a file?",
-  //     "When a user tries to do something, the first thing that is checked is the direct permissions of the file. You can view and modify this list for a file by clicking on permissions -> advanced -> edit --> setting the user by clicking the change button <li> </ul>"
-  //   ];
+  userGuideDivRight.append(
+    "<strong>A member's permissions should be different from the group's </strong> <br><br>"
+  );
+  userGuideDivRight.append(
+    "Go into permissions, add member, and adjust permissions accordingly <br><br><br>"
+  );
 
-  //   // Create a jQuery element for the unordered list
-  //   var $ul = $("<ul>");
-
-  //   // Loop through the array and create a list item for each item
-  //   $.each(rightItems, function (index, value) {
-  //     var $li = $("<li>").html(value);
-  //     $ul.append($li);
-  //   });
-
-  //   // Append the unordered list to the div with id "myDiv"
-  //   userGuideDivRight.append($ul);
 
   userGuideDiv.append(userGuideDivLeft);
   userGuideDiv.append(userGuideDivRight);
