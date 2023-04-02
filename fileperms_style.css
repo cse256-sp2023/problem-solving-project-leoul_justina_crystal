@@ -1,38 +1,118 @@
 .file {
-    padding: 8;
-    border-bottom: 1px solid #dddddd;
+  padding: 8;
+  border-bottom: 1px solid #dddddd;
 }
 
 .section {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-.ui-selected { 
-    background: #007fff; 
-    color: white; 
+.ui-selected {
+  background: #007fff;
+  color: white;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
-
 #mturk-top-banner-drop-down-content {
-    position: absolute;
-    width: 99%;
-    bottom: 0px;
-    top:unset;
-    left: 0;
-    background-color: #eee;
-    z-index: 100;
-    padding: 10px 10px 10px 10px;
-    border-left: 1px orange solid;
-    border-right: 1px orange solid;
-    border-top: 1px orange solid;
+  position: absolute;
+  width: 99%;
+  bottom: 0px;
+  top: unset;
+  left: 0;
+  background-color: #eee;
+  z-index: 100;
+  padding: 10px 10px 10px 10px;
+  border-left: 1px orange solid;
+  border-right: 1px orange solid;
+  border-top: 1px orange solid;
 }
 
 .no-close .ui-dialog-titlebar-close {
-    display: none;
+  display: none;
+}
+
+#inner-body {
+}
+
+#html-loc {
+  display: flex;
+  flex-direction: row;
+}
+
+#filestructure {
+  width: 100%;
+}
+
+#sidepanel {
+}
+
+#permissionsStateDiv {
+}
+
+.table {
+  font-family: sans-serif;
+  width: 100%;
+  padding: 50px;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: orange;
+}
+
+td,
+th {
+  padding: 0.2rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+button {
+  padding: 5px;
+}
+
+#permissions_user_title {
+  background-color: orange;
+  padding: 2px;
+}
+
+.ui-widget-content {
+  padding: 5px;
+}
+
+#adv_perm_table_container {
+  height: 400px !important;
+}
+
+#userGuideDiv {
+  padding: 5px;
+  margin-top: 3px;
+  border-top: 3px solid #eeeeee;
+  width: 100%;
+  height: 500px;
+  bottom: 0;
+  left: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.25rem;
+}
+
+#userGuideDivLeft {
+  width: 50%;
+  padding: 30px;
+}
+#userGuideDivRight {
+  width: 50%;
+  padding: 30px;
+}
+
+#userGuideDivLeft ul {
+  list-style-type: disc !important;
 }
