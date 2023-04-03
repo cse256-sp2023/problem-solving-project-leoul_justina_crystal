@@ -116,3 +116,8 @@ button {
 #userGuideDivLeft ul {
   list-style-type: disc !important;
 }
+
+.indented {
+  margin-left: 28px;
+  text-indent: -28px;
+}

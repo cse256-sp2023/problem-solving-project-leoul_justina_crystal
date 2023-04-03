@@ -626,7 +626,8 @@ function renderUserGuideUI() {
   // Create an array of items for the bullet list
   var leftItems = [
     "Selecting \"Deny\" overrides \"Allow\"",
-    "Inheritance means that a file/folder may inherit a permissions list from its parent. For example, if Alice has read attributes and delete access to parentFolder, some childFile inside parentFolder may also have those permissions set if the checkbox under advanced that reads <strong> Include inheritable permissions from this object's parent </strong> is checked",
+    "Inheritance means that a file/folder may inherit a permissions list from its parent.", 
+    "<span class='indented'>For example, if Alice has read attributes and delete access to parentFolder, some childFile inside parentFolder may also have those permissions set if the checkbox under advanced that reads <strong> Include inheritable permissions from this object's parent </strong> is checked",
   ];
 
   // Create a jQuery element for the unordered list
@@ -635,6 +636,9 @@ function renderUserGuideUI() {
   // Loop through the array and create a list item for each item
   $.each(leftItems, function (index, value) {
     var $li = $("<li>").html(value);
+   if (value.includes("<span class='indented'>")) {
+    $li.addClass("indented");
+  }
     $ul.append($li);
   });
 

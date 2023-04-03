@@ -35,7 +35,7 @@ $('.perm_info').click(function(){
 
 })
 
-// renderPermissionStatusUI();
+//renderPermissionStatusUI();
 renderUserGuideUI();
 
 let new_dialog = define_new_dialog("new_dialog", "Explanation");
