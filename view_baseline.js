@@ -7,8 +7,8 @@ show_starter_dialogs = false // set this to "false" to disable the survey and 3-
 // Make permissions dialog:
 perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
     // The following are standard jquery-ui options. See https://jqueryui.com/dialog/
-    height: 800,
-    width: 800,
+    height: 500,
+    width: 400,
     buttons: {
         OK:{
             text: "OK",
@@ -44,7 +44,7 @@ file_permission_users = define_single_select_list('permdialog_file_user_list', f
     grouped_permissions.attr('username', selected_user)
 })
 file_permission_users.css({
-    'height':'150px',
+    'height':'80px',
 })
 
 // Make button to add a new user to the list:
@@ -317,8 +317,8 @@ $( "#advtabs" ).tabs({
 });
 let adv_contents = $(`#advdialog`).dialog({
     position: { my: "top", at: "top", of: $('#html-loc') },
-    width: 800,
-    height: 800,
+    width: 700,
+    height: 450,
     modal: true,
     autoOpen: false,
     appendTo: "#html-loc",
@@ -470,8 +470,8 @@ $('#adv_owner_change_button').click(function() {
 
 // User dialog 
 let user_select_contents = $("#user_select_dialog").dialog({
-    height: 800,
-    width: 800,
+    height: 450,
+    width: 400,
     modal: true,
     autoOpen: false,
     appendTo: "#html-loc",
@@ -504,8 +504,8 @@ let user_select_contents = $("#user_select_dialog").dialog({
 let perm_entry_dialog = $('#permentry').dialog({
     modal: true,
     autoOpen: false,
-    height: 800,
-    width: 800,
+    height: 500,
+    width: 400,
     appendTo: "#html-loc",
     position: { my: "top", at: "top", of: $('#html-loc') },
     buttons: {
@@ -592,8 +592,8 @@ function end_task() {
     $('#html-loc').empty()
     $(`<div id="end_dialog" title="Task Ended">The time allotted for this task has run out. Please select one of the options in the collapsible task panel below to submit the task.</div>`)
         .dialog({
-            width: 800,
-            height: 800,
+            width: 400,
+            height: 200,
             appendTo: "#html-loc",
             dialogClass: "no-close",
             position: { my: "top", at: "top", of: $('#html-loc') },
@@ -614,8 +614,8 @@ If you complete the task early, you will also be able to submit the answer as so
 You will still get paid if you don't finish the task, but you have to try.
 </div>`).dialog({
     modal:true,
-    width: 800,
-    height: 800,
+    width: 700,
+    height: 350,
     appendTo: "#html-loc",
     dialogClass: "no-close",
     autoOpen: show_starter_dialogs,
@@ -700,8 +700,8 @@ $(`<div id="survey-dialog" title="Survey">
     </form>
 </div>`).dialog({
     modal:true,
-    width: 800,
-    height: 800,
+    width: 700,
+    height: 500,
     autoOpen: show_starter_dialogs,
     appendTo: "#html-loc",
     dialogClass: "no-close",
