@@ -618,15 +618,15 @@ function populatePermissionsStateDiv() {
 
 function renderUserGuideUI() {
   var userGuideDiv = $("<div>").attr("id", "userGuideDiv");
-  $("#wrapper").append("<h2> Understanding Permissions and FAQs </h2>");
+  $("#wrapper").append("<h2> Tutorial </h2>");
 
   var userGuideDivLeft = $("<div>").attr("id", "userGuideDivLeft");
   var userGuideDivRight = $("<div>").attr("id", "userGuideDivRight");
+  var userGuideDivBottom = $("<div>").attr("id", "userGuideDivBottom");
 
   // Create an array of items for the bullet list
   var leftItems = [
-    "Selecting \"Deny\" overrides \"Allow\"",
-    "Inheritance means that a file/folder may inherit a permissions list from its parent.", 
+    "Inheritance means that a file/folder may inherit a permissions list from its parent.",
     "<span class='indented'>For example, if Alice has read attributes and delete access to parentFolder, some childFile inside parentFolder may also have those permissions set if the checkbox under advanced that reads <strong> Include inheritable permissions from this object's parent </strong> is checked",
   ];
 
@@ -636,31 +636,53 @@ function renderUserGuideUI() {
   // Loop through the array and create a list item for each item
   $.each(leftItems, function (index, value) {
     var $li = $("<li>").html(value);
-   if (value.includes("<span class='indented'>")) {
-    $li.addClass("indented");
-  }
+    if (value.includes("<span class='indented'>")) {
+      $li.addClass("indented");
+    }
     $ul.append($li);
   });
 
   // Append the unordered list to the div with id "myDiv"
   userGuideDivLeft.append($ul);
 
-  userGuideDivRight.append(
-    "<strong> What do I do if I want to change a specific permission on a file? </strong> <br><br>"
+  var userGuideDivBottomLeft = $("<div>").attr("id", "userGuideDivBottomLeft");
+  var userGuideDivBottomRight = $("<div>").attr(
+    "id",
+    "userGuideDivBottomRight"
   );
-  userGuideDivRight.append(
-    "When a user tries to do something, the first thing that is checked is the direct permissions of the file. You can view and modify this list for a file by clicking on permissions -> advanced -> edit -> setting the user by clicking the change button <br><br><br>"
-  );
-
-  userGuideDivRight.append(
-    "<strong>A member's permissions should be different from the group's </strong> <br><br>"
-  );
-  userGuideDivRight.append(
-    "Go into permissions, add member, and adjust permissions accordingly <br><br><br>"
+  var userGuideDivBottomBottom = $("<div>").attr(
+    "id",
+    "userGuideDivBottomBottom"
   );
 
+  // Create a new image element
+  var $img1 = $("<img />", {
+    src: "resources/General permissions labled.png",
+    class: "tutorialImage",
+  });
+  userGuideDivBottomLeft.append($img1);
+
+  // Create a new image element
+  var $img2 = $("<img />", {
+    src: "resources/Advanced 2.jpg",
+    class: "tutorialImage",
+  });
+  userGuideDivBottomRight.append($img2);
+
+    // Create a new image element
+    var $img3 = $("<img />", {
+      src: "resources/ad-1.jpg",
+      class: "tutorialImage",
+    });
+    userGuideDivBottomBottom.append($img3);
+
+
+  userGuideDivBottom.append(userGuideDivBottomLeft);
+  userGuideDivBottom.append(userGuideDivBottomRight);
+  userGuideDivBottom.append(userGuideDivBottomBottom);
 
   userGuideDiv.append(userGuideDivLeft);
   userGuideDiv.append(userGuideDivRight);
   $("#wrapper").append(userGuideDiv);
+  $("#wrapper").append(userGuideDivBottom);
 }
