@@ -87,10 +87,11 @@ function make_user_list(id_prefix, usermap, add_attributes = false) {
 // - returns the dialog jquery object
 function define_new_dialog(id_prefix, title = "", options = {}) {
   let default_options = {
-    appendTo: "#html-loc",
+    appendTo: "#permissionSettings",
     autoOpen: false,
     modal: true,
-    position: { my: "top", at: "top", of: $("#html-loc") },
+    position: { my: "top", at: "top", of: $("#permissionSettings") },
+    width: 500
   };
 
   // add default options - do not override ones that are already specified.
@@ -622,4 +623,7 @@ $("#filestructure").css({
 });
 $("#filestructure").after(
   '<div id="sidepanel" style="display:inline-block;width:49%"></div>'
+);
+$("#filestructure").after(
+  '<div id="permissionSettings" style="display:inline-block;width:49%"></div>'
 );

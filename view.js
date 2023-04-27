@@ -1,17 +1,15 @@
 // ---- Define your dialogs  and panels here ----
 let user_selector = define_new_user_select_field(
-    "user_selector",
-    "New User",
-    function (selected_user) {
-      $("#permissions_panel").attr("username", selected_user);
-      $("#permissions_panel").attr(
-        "filepath",
-        "/C/presentation_documents/important_file.txt"
-      );
-    }
-  );
-  
-
+  "user_selector",
+  "New User",
+  function (selected_user) {
+    $("#permissions_panel").attr("username", selected_user);
+    $("#permissions_panel").attr(
+      "filepath",
+      "/C/presentation_documents/important_file.txt"
+    );
+  }
+);
 
 let permissions_panel = define_new_effective_permissions(
   "permissions_panel",
@@ -21,21 +19,22 @@ $("#sidepanel").append(permissions_panel);
 
 $("#sidepanel").append(user_selector);
 
-$('.perm_info').click(function(){
+$(".perm_info").click(function () {
+  console.log("clicked!");
+  new_dialog.dialog("open");
+  console.log($("#permissions_panel").attr("filepath"));
+  console.log($("#permissions_panel").attr("username"));
+  console.log($(this).attr("permission_name"));
 
-    console.log("clicked!")
-    new_dialog.dialog('open')
-    console.log($('#permissions_panel').attr('filepath'))
-    console.log($('#permissions_panel').attr('username'))
-    console.log($(this).attr('permission_name'))
-
-    let file_object = path_to_file[$('#permissions_panel').attr('filepath')]
-    let user_object = all_users[$('#permissions_panel').attr('username')]
-    let per_to_check = $(this).attr('permission_name')
-    new_dialog.html(get_explanation_text(allow_user_action(file_object, user_object, per_to_check, true)))
-
-
-})
+  let file_object = path_to_file[$("#permissions_panel").attr("filepath")];
+  let user_object = all_users[$("#permissions_panel").attr("username")];
+  let per_to_check = $(this).attr("permission_name");
+  new_dialog.html(
+    get_explanation_text(
+      allow_user_action(file_object, user_object, per_to_check, true)
+    )
+  );
+});
 
 //renderPermissionStatusUI();
 renderUserGuideUI();
@@ -118,7 +117,7 @@ $(".permbutton").click(function (e) {
   let path = e.currentTarget.getAttribute("path");
   perm_dialog.attr("filepath", path);
   perm_dialog.dialog("open");
-  //open_permissions_dialog(path)
+  open_permissions_dialog(path)
 
   // Deal with the fact that folders try to collapse/expand when you click on their permissions button:
   e.stopPropagation(); // don't propagate button click to element underneath it (e.g. folder accordion)
@@ -135,6 +134,19 @@ $(".permbutton").click(function (e) {
     })
   );
 });
+
+/* Permission Settings Window */
+
+
+
+// Create a new <div> element
+var newDiv = $("<div>");
+
+// Add some content to the new <div>
+newDiv.text("This is a new div created with jQuery!");
+
+// Append the new <div> to an existing <div> on the page with ID "myDiv"
+$("#permis").append(newDiv);
 
 // ---- Assign unique ids to everything that doesn't have an ID ----
 $("#html-loc").find("*").uniqueId();

@@ -25,7 +25,7 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
             }
         }
     }
-})
+});
 
 // Make the initial "Object Name:" text:
 // If you pass in valid HTML to $(), it will *create* elements instead of selecting them. (You still have to append them, though)
