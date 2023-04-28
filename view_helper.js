@@ -85,7 +85,7 @@ function make_user_list(id_prefix, usermap, add_attributes = false) {
 // - title is a string which will go in the title area of the dialog box
 // - options is a set of jquery-ui options
 // - returns the dialog jquery object
-function define_new_dialog(id_prefix, title = "", options = {}) {
+function define_new_embedded_dialog(id_prefix, title = "", options = {}) {
   let default_options = {
     appendTo: "#permissionSettings",
     autoOpen: false,
@@ -101,7 +101,29 @@ function define_new_dialog(id_prefix, title = "", options = {}) {
     }
   }
 
-  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`).dialog(
+  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`).addClass("permDialog").dialog(
+    options
+  );
+
+  return dialog;
+}
+
+function define_new_dialog(id_prefix, title = "", options = {}) {
+  let default_options = {
+    appendTo: "#html-loc",
+    autoOpen: false,
+    modal: true,
+    position: { my: "top", at: "top", of: $("#html-loc") },
+  };
+
+  // add default options - do not override ones that are already specified.
+  for (let d_o in default_options) {
+    if (!(d_o in options)) {
+      options[d_o] = default_options[d_o];
+    }
+  }
+
+  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`).addClass("permDialog").dialog(
     options
   );
 

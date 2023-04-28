@@ -15,9 +15,11 @@ let permissions_panel = define_new_effective_permissions(
   "permissions_panel",
   true
 );
-$("#sidepanel").append(permissions_panel);
 
 $("#sidepanel").append(user_selector);
+$("#sidepanel").append(permissions_panel);
+
+
 
 $(".perm_info").click(function () {
   console.log("clicked!");
@@ -117,7 +119,7 @@ $(".permbutton").click(function (e) {
   let path = e.currentTarget.getAttribute("path");
   perm_dialog.attr("filepath", path);
   perm_dialog.dialog("open");
-  open_permissions_dialog(path)
+  // open_permissions_dialog(path)
 
   // Deal with the fact that folders try to collapse/expand when you click on their permissions button:
   e.stopPropagation(); // don't propagate button click to element underneath it (e.g. folder accordion)

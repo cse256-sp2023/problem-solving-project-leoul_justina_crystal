@@ -38,6 +38,11 @@ div#permissionSettings div {
   background: none !important;
 }
 
+.permDialog {
+  background-color: aquamarine !important;
+  height: 430px !important;
+}
+
 .ui-widget-content {
   padding: 5px;
 }
@@ -137,7 +142,7 @@ div#permissionSettings div {
 
 }
 
-#user_selector_button:hover::before {
+/* #user_selector_button:hover::before {
   content: "Click here to set a user whose current permissions you would like to view";
   position: absolute;
   top: -30px;
@@ -148,7 +153,7 @@ div#permissionSettings div {
   color: #fff;
   border-radius: 5px;
   white-space: nowrap;
-}
+} */
 
 /* Task Description Footer */
 .footer {
