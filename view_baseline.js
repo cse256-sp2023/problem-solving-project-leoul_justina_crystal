@@ -5,7 +5,7 @@ show_starter_dialogs = false // set this to "false" to disable the survey and 3-
 
 // --- Create all the elements, and connect them as needed: ---
 // Make permissions dialog:
-perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
+perm_dialog = define_new_embedded_dialog('permdialog', title='Permissions', options = {
     // The following are standard jquery-ui options. See https://jqueryui.com/dialog/
     height: 500,
     width: 400,
@@ -13,6 +13,7 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
         OK:{
             text: "OK",
             id: "perm-dialog-ok-button",
+            class: " btn btn-warning",
             click: function() {
                 $( this ).dialog( "close" );
             }
@@ -20,16 +21,17 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
         Advanced: {
             text: "Advanced",
             id: "perm-dialog-advanced-button",
+            class: " btn btn-warning",
             click: function() {
                 open_advanced_dialog(perm_dialog.attr('filepath'))
             }
         }
     }
-})
+});
 
 // Make the initial "Object Name:" text:
 // If you pass in valid HTML to $(), it will *create* elements instead of selecting them. (You still have to append them, though)
-obj_name_div = $('<div id="permdialog_objname" class="section">Object Name: <span id="permdialog_objname_namespan"></span> </div>')
+obj_name_div = $('<div id="permdialog_objname" class="section"> Object Name: <span id="permdialog_objname_namespan"></span> </div>')
 
 //Make the div with the explanation about special permissions/advanced settings:
 advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">For special permissions or advanced settings, click Advanced.</div>')
@@ -119,7 +121,7 @@ let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Are you sure
 are_you_sure_dialog.text('Do you want to remove permissions for this user?')
 
 // Make actual "remove" button:
-perm_remove_user_button  = $('<button id="perm_remove_user" class="ui-button ui-widget ui-corner-all">Remove</button>')
+perm_remove_user_button  = $('<button id="perm_remove_user" class="ui-button ui-widget ui-corner-all btn btn-warning">Remove</button>')
 perm_remove_user_button.click(function(){
     // Get the current user and filename we are working with:
     let selected_username = file_permission_users.attr('selected_item')
