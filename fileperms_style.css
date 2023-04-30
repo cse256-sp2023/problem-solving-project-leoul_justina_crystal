@@ -1,46 +1,75 @@
 /* Foundations */
 #inner-body {
-  border: 3px solid red;
+  background-color: #E5E6E4;
 }
 
 .section {
   margin-bottom: 5px;
-  background-color: pink;
 }
 
 #html-loc {
   display: flex;
   flex-direction: row;
   margin-bottom: 45px;
-  border: 3px solid green;
+  background-color: #E5E6E4;
 }
 
 #filestructure {
   width: 33% !important;
-  background-color: aqua;
+  background-color: #E5E6E4;
+  margin: 15px;
+}
+
+#filestructure h3 {
+  
 }
 
 #sidepanel {
   width: 33% !important;
-  background-color: brown;
+  margin: 15px;
+
+}
+
+#permissionSettingsContainer {
+  width: 33% !important;
+  margin: 15px;
+  background-color: #E5E6E4;
 }
 
 #permissionSettings {
-  width: 33% !important;
-  margin: 0 !important;
-  background-color:coral;
+  width: 100% !important;
+  background-color: #E5E6E4;
+}
+
+/* #ui-id-19 {
+  position: relative !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: none !important;
+} */
+
+#ui-id-25 {
+  background-color: #E5E6E4;
+  height: 100%;
+}
+
+#permdialog_grouped_permissions tr {
+  padding: 3px !important;
+}
+
+#permdialog_file_user_list {
+  height: 100% !important;
 }
 
 div#permissionSettings div {
   position: relative !important;
   left: 0 !important;
   width: 100% !important;
-  background: none !important;
+  /* background: none !important; */
 }
 
 .permDialog {
-  background-color: aquamarine !important;
-  height: 430px !important;
+  height: 100% !important;
 }
 
 .ui-widget-content {
@@ -56,19 +85,18 @@ div#permissionSettings div {
 .file {
   padding: 8;
   border-bottom: 1px solid #dddddd;
-  background-color: yellow;
 }
 
 .folder_contents {
 }
 
 /* Settings Window */
+.advDialog {
+}
 #adv_perm_table_container {
-  height: 400px !important;
-  background-color: chocolate;
 }
 
-#adv_perm_edit:hover::before {
+/* #adv_perm_edit:hover::before {
   content: "Click to change permissions for a specific user";
   position: absolute;
   top: -30px;
@@ -80,9 +108,13 @@ div#permissionSettings div {
   border-radius: 5px;
   white-space: nowrap;
   z-index: 2;
+} */
+
+.permbutton {
+  margin-left: 25px;
 }
 
-.permbutton:hover::before {
+/* .permbutton:hover::before {
   content: "Click here to see the permission settings for this object";
   position: absolute;
   top: 30px;
@@ -94,9 +126,9 @@ div#permissionSettings div {
   border-radius: 5px;
   white-space: nowrap;
   z-index: 2;
-}
+} */
 
-#perm_add_user_button:hover::before {
+/* #perm_add_user_button:hover::before {
   content: "Click to select user to add to this object";
   position: absolute;
   top: -30px;
@@ -108,9 +140,9 @@ div#permissionSettings div {
   border-radius: 5px;
   white-space: nowrap;
   z-index: 2;
-}
+} */
 
-#perm_remove_user:hover::before {
+/* #perm_remove_user:hover::before {
   content: "Click to select user to remove from this object";
   position: absolute;
   top: -30px;
@@ -122,7 +154,7 @@ div#permissionSettings div {
   border-radius: 5px;
   white-space: nowrap;
   z-index: 2;
-}
+} */
 
 .permissionSettingsDialog {
   background-color: red;
@@ -139,6 +171,21 @@ div#permissionSettings div {
 }
 
 #user_selector_button {
+
+}
+
+#tutText {
+  color: red;
+}
+
+div#permissionSettings div#DOA {
+  width: 45% !important;
+  float: right;
+  text-align: center;
+  padding: 12px;
+  color: red;
+  font-size: 0.8rem;
+  font-weight:bold;
 
 }
 
@@ -225,11 +272,11 @@ div#permissionSettings div {
 
 #userGuideDivBottom {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
 }
 
 .tutorialImage {
-  width: 70%;
+  width:90%;
   margin-bottom: 5px;
 }

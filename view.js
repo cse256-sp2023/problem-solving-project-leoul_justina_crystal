@@ -1,7 +1,10 @@
 // ---- Define your dialogs  and panels here ----
+
+$("#perm_add_user_line").append("<div id='DOA'> Note: Deny overrides Allow </div>");
+
 let user_selector = define_new_user_select_field(
   "user_selector",
-  "New User",
+  "Pick User",
   function (selected_user) {
     $("#permissions_panel").attr("username", selected_user);
     $("#permissions_panel").attr(
@@ -16,10 +19,21 @@ let permissions_panel = define_new_effective_permissions(
   true
 );
 
+let permissionSettingsHeader = $("<div>").addClass("alert alert-dark");
+let permissionSettingsHeaderText = $('<h3> Permission Settings </h3> <h6 id="tutText"> Scroll Down for Full Tutorial</h6>');
+permissionSettingsHeader.append(permissionSettingsHeaderText);
+$("#permissionSettingsContainer").prepend(permissionSettingsHeader);
+
+
+// create a new h3 tag
+let sidePanelHeader = $("<div>").addClass("alert alert-dark");
+let sidePanelHeaderText = $('<h3> Effective Permissions </h3>');
+sidePanelHeader.append(sidePanelHeaderText)
+
+// append the h3 tag to the div
+$("#sidepanel").append(sidePanelHeader);
 $("#sidepanel").append(user_selector);
 $("#sidepanel").append(permissions_panel);
-
-
 
 $(".perm_info").click(function () {
   console.log("clicked!");
@@ -62,6 +76,7 @@ $(".perm_info").click(function () {
 
 $(document).ready(function () {
   $(".permbutton").append("Permissions");
+  $(".permbutton").addClass("btn btn-warning");
 });
 
 // ---- Display file structure ----

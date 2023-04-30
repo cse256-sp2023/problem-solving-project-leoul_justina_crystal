@@ -91,7 +91,7 @@ function define_new_embedded_dialog(id_prefix, title = "", options = {}) {
     autoOpen: false,
     modal: true,
     position: { my: "top", at: "top", of: $("#permissionSettings") },
-    width: 500
+    width: 500,
   };
 
   // add default options - do not override ones that are already specified.
@@ -101,9 +101,9 @@ function define_new_embedded_dialog(id_prefix, title = "", options = {}) {
     }
   }
 
-  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`).addClass("permDialog").dialog(
-    options
-  );
+  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`)
+    .addClass("permDialog")
+    .dialog(options);
 
   return dialog;
 }
@@ -123,9 +123,9 @@ function define_new_dialog(id_prefix, title = "", options = {}) {
     }
   }
 
-  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`).addClass("permDialog").dialog(
-    options
-  );
+  let dialog = $(`<div id="${id_prefix}" title="${title}"></div>`)
+    .addClass("permDialog")
+    .dialog(options);
 
   return dialog;
 }
@@ -196,9 +196,9 @@ function define_new_effective_permissions(
   let effective_container = $(
     `<div id="${id_prefix}" class="ui-widget-content effectivePermissions" style="overflow-y:scroll"></div>`
   );
-  effective_container.append(
-    "<p class='effective_perm_text'> Select a user at the bottom to <strong> observe </strong> the current state of permissions. </p>"
-  );
+  // effective_container.append(
+  //   "<p class='effective_perm_text'> Select a user to <strong> observe </strong> the current state of their permissions. </p>"
+  // );
 
   // If no subset of permissions is passed in, use all of them.
   if (which_permissions === null) {
@@ -291,12 +291,12 @@ function define_grouped_permission_checkboxes(id_prefix, which_groups = null) {
   }
   // For each permissions group, create a row:
   for (let g of which_groups) {
-    let row = $(`<tr id="${id_prefix}_row_${g}">
+    let row = $(`<tr id="${id_prefix}_row_${g}" class="form-check-label">
             <td id="${id_prefix}_${g}_name">${g}</td>
         </tr>`);
     for (let ace_type of ["allow", "deny"]) {
       row.append(`<td id="${id_prefix}_${g}_${ace_type}_cell">
-                <input type="checkbox" id="${id_prefix}_${g}_${ace_type}_checkbox" ptype="${ace_type}" class="groupcheckbox" group="${g}" ></input>
+                <input type="checkbox" id="${id_prefix}_${g}_${ace_type}_checkbox" ptype="${ace_type}" class="groupcheckbox form-check-input" group="${g}" ></input>
             </td>`);
     }
     group_table.append(row);
@@ -593,7 +593,7 @@ function define_new_user_select_field(
   // Make the element:
   let sel_section = $(`<div id="${id_prefix}_line" class="section">
             <span id="${id_prefix}_field" class="ui-widget-content" style="width: 80%;display: inline-block;">&nbsp</span>
-            <button id="${id_prefix}_button" class="ui-button ui-widget ui-corner-all">${select_button_text}</button>
+            <button id="${id_prefix}_button" class="ui-button ui-widget ui-corner-all btn btn-warning">${select_button_text}</button>
         </div>`);
 
   // Open user select on button click:
@@ -647,5 +647,5 @@ $("#filestructure").after(
   '<div id="sidepanel" style="display:inline-block;width:49%"></div>'
 );
 $("#filestructure").after(
-  '<div id="permissionSettings" style="display:inline-block;width:49%"></div>'
+  '<div id="permissionSettingsContainer"><div id="permissionSettings" style="display:inline-block;width:49%"></div></div>'
 );
