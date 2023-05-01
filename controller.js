@@ -618,7 +618,7 @@ function populatePermissionsStateDiv() {
 
 function renderUserGuideUI() {
   var userGuideDiv = $("<div>").attr("id", "userGuideDiv");
-  $("#wrapper").append("<h2> Tutorial </h2>");
+  $("#wrapper").append('<h2 id="tutorialHeading"> Tutorial </h2>');
 
   var userGuideDivLeft = $("<div>").attr("id", "userGuideDivLeft");
   var userGuideDivRight = $("<div>").attr("id", "userGuideDivRight");

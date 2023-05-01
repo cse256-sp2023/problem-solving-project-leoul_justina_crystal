@@ -176,6 +176,15 @@ div#permissionSettings div {
 
 #tutText {
   color: red;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#tutorialHeading {
+  color: red;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 5em;
 }
 
 div#permissionSettings div#DOA {

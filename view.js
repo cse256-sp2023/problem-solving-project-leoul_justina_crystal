@@ -1,6 +1,6 @@
 // ---- Define your dialogs  and panels here ----
 
-$("#perm_add_user_line").append("<div id='DOA'> Note: Deny overrides Allow </div>");
+$("#perm_add_user_line").append("<div id='DOA'> Note: Check Deny instead of unchecking Allow </div>");
 
 let user_selector = define_new_user_select_field(
   "user_selector",
